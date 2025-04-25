@@ -99,13 +99,9 @@ func buildPrompt(request *models.GenerateRequest) string {
 	mathSymbolGuide := ""
 	if request.Subject == "數學" {
 		mathSymbolGuide = `
-        如果題目包含數學符號，請使用以下格式：
-        - 分數：使用 "a/b" 格式，例如 "1/2"
-        - 根號：使用 "sqrt(n)" 格式，例如 "sqrt(2)"
-        - 指數：使用 "^" 符號，例如 "x^2"
-        - 希臘字母：使用英文名稱，例如 "pi" 代替 "π"
-        - 函數：使用英文名稱，例如 "cos" 代替 "cos"
-        請避免使用 LaTeX 格式或其他特殊符號。`
+        請避免使用 LaTeX 格式或其他特殊符號。
+        換行請使用 \n 符號。
+        `
 	}
 
 	switch request.QuestionType {
